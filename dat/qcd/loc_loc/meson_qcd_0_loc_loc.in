@@ -1,0 +1,38 @@
+[Run name]
+name	     qcd0
+
+[Directories]
+dat_dir      ./ju_loc_loc
+log_dir      ./log
+cnfg_dir     /home/mpi/raw-data/cnfg/qcd
+sfld_dir     /home/mpi/raw-data/sfld/qcd
+
+[Configurations]
+first        5
+last         5
+step         5
+
+[Gauge group]
+gauge        SU(3)
+
+[Boundary conditions]
+type 3              # 3=periodic, 1=SF, 0=open, 2=open-SF
+cstar 0             # 0,1,2,3; number of spatial direction with C* boundary condition
+
+[Source fields]
+x           0 0 0 0         # coordinates of the source point
+nsrc        10              # number of sources that should be generated around x
+
+[Vector current]
+current_type 0          # type of the vector current to calculate
+nfl         1           # number of flavors (degenerate flavors count as 1)
+fl1         0           # index of the flavor to participate in the calculation (must be nfl integers)
+fl2         0           # index of the flavor to participate in the calculation (must be nfl integers)
+idirac      1 2 3       # array of gamma matrices to put into the traces
+
+[Dirac operator]
+kappa        0.134407335560       # Hopping parameter (bare mass is m0=1/(2*kappa)-4)
+su3csw       2.18859        # Coefficient of the SU(3) SW term
+theta        0.0 0.0 0.0    # Angles specifying the phase-periodic bc
+mu           0.0
+
